@@ -1,0 +1,77 @@
+
+.header {
+  background: url(../img/First-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 220px;
+  &__wrap {
+
+  }
+  &__btn {
+    margin-top: 48px;
+  }
+  &__title {
+    margin-top: 140px;
+    font-weight: 900;
+    font-size: 82px;
+    line-height: 104px;
+    color: #FFFFFF;
+  }
+}
+
+
+.nav {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  height: 78px;
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    &-content {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__logo {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 33px;
+    color: #FFFFFF;
+  }
+  &__list {
+    display: flex;
+    margin-left: 80px;
+    list-style-type: none;
+    align-items: center;
+    &__item {
+      margin: 0px 35px;
+      line-height: 20px;
+      a {
+        font-weight: 500;
+        font-size: 16px;
+        color: #FFFFFF;
+      }
+    }
+  }
+  &__button {
+    padding: 30px 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    height: 100%;
+    &:hover {
+      color: #FFF;
+      text-decoration: none;
+    }
+    &-in {
+      border-left: 1px solid #FFFFFF;
+      border-right: 1px solid #FFFFFF;
+    }
+    &-up {
+      border-right: 1px solid #FFFFFF;
+    }
+  }
+}

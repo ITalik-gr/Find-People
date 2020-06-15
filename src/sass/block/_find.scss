@@ -1,0 +1,46 @@
+
+.find {
+  &__btn {
+    margin-top: 45px;
+    padding: 25px 97px;
+  }
+  &__wrap {
+    overflow: hidden;
+    display: flex;
+  }
+  &__image {
+    img {
+      max-width: 100%;
+    }
+  }
+  &__container {
+    max-width: 1150px;
+    padding: 0px 20px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  &__body {
+    width: 50%;
+    padding: 10px 20px;
+    margin-top: 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+  }
+  &__content {
+    background: rgba(215, 109, 52, 0.103);
+    flex: 0 0 100%;
+  }
+}
+@media (min-width: 767px) {
+  .find__wrap { // Section
+    display: flex;
+  }
+  .find__image {
+    flex: 0 0 50%;
+    transform: translateX(-100%);
+  }
+}

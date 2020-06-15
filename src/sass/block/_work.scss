@@ -1,0 +1,109 @@
+
+.work {
+  padding: 93px 0px 153px 0px;
+  position: relative;
+  &__top-right {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 2px solid #D84948;
+    box-sizing: border-box;
+    transform: rotate(-43.36deg);
+    width: 117.98px;
+    height: 117.98px;
+  }
+  &__wrap {
+    margin-top: 98px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+  }
+  &-card {
+    position: relative;
+    max-width: 286px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &:last-child:after {
+      display: none;
+    }
+    &::after {
+      position: absolute;
+      right: -40%;
+      top: calc(18% - 1px);
+      content: '';
+      height: 1px;
+      width: 100px;
+      background-color: rgba(0, 0, 0, 0.11);
+
+    }
+    &:hover .work-card__top::before  {
+      transform: scale(1.621);
+      opacity: 1;
+    }
+    
+    &__top {
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 150%;
+      border: 1px solid #DDDDDD;
+      box-sizing: border-box;
+      border-radius: 100%;
+      padding: 25px 42px;
+      color: #D84948;
+      position: relative;
+      // &::after {
+      //   position: absolute;
+      //   right: -200%;
+      //   top: calc(50% - 1px);
+      //   content: '';
+      //   height: 1px;
+      //   width: 100px;
+      //   background-color: rgba(0, 0, 0, 0.11);
+
+      // }
+      &::before {
+        content: '';
+        border: 1px solid rgba(221, 221, 221, 0.5);
+        box-sizing: border-box;
+        height: 98px;
+        width: 98px;
+        border-radius: 100%;
+        padding: 25px 42px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.4s all;
+        opacity: 0;
+        color: #D84948;
+      }
+      // &:hover::before {
+      //   transform: scale(1.621);
+      // }
+    }
+    &__body {
+      margin-top: 47px;
+    }
+    &__title {
+      font-weight: 900;
+      font-size: 22px;
+      line-height: 150%;
+      color: #000000;
+      text-align: center;
+    }
+    &__descr {
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #000000;
+      p {
+        max-width: 286px;
+      }
+    }
+  }
+}
+// .work-card__top-wrap:first-child:after {
+//   display: none;  
+// }
