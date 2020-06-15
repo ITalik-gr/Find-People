@@ -35,6 +35,29 @@ html,body {
   text-transform: uppercase;
   background: rgba(255, 255, 255, 0.05);
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  &:hover span{
+    height: 100%;
+  }
+  &:hover .silver {
+    height: 100%;
+    background: rgba(255, 255, 255, 0.247);
+
+
+
+
+  }
+  span {
+    z-index: -1;
+    transition: 1s all;
+    height: 0%;
+    width: 100%;
+    background-color: #D84948;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
   &-w {
     color: #FFFFFF;
     border: 1px solid #FFFFFF;
@@ -53,14 +76,35 @@ html,body {
 .span-bottom {
   position: relative;
   z-index: 2;
+  &__top {
+    position: relative;
+    z-index: 2;
+    &:hover:before {
+      height: calc(95%);
+    }
+    &::before {
+      z-index: -1;
+      transition: 0.8s all;
+      content: '';
+      background: #D84948;
+      width: 100%;
+      height: 25px;
+      position: absolute;
+      bottom: 10px;
+    }
+  }
+  &:hover:before {
+    height: calc(95% + 3px);
+  }
   &::before {
     z-index: -1;
+    transition: 0.8s all;
     content: '';
     background: #D84948;
     width: 100%;
-    height: 25px;
+    height: 18px;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
   }
 }
 .content__title {
@@ -75,9 +119,203 @@ html,body {
 .tac {
   text-align: center!important;
 }
+
+.preloader {
+  background: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+}
+
+$color-4: #eead68;
+$color-3: #eec368;
+$color-2: #eece68;
+$color-1: #eed968;
+$color-5: #ee8c68;
+
+$color: $color-1, $color-2, $color-3, $color-4, $color-5;
+
+@mixin anim() {
+  @keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50%,
+    75% {
+      transform: scale(2.5);
+    }
+    78%, 100% {
+      opacity: 0;
+    }
+  }
+}
+
+body {
+
+}
+
+.containerr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  animation-delay: 1s;
+}
+
+@for $i from 1 through 5 {
+  .item-#{$i} {
+    width: 20px;
+    height: 20px;
+    background: #f583a1;
+    border-radius: 50%;
+    @include anim();
+    background-color: nth($color, $i);
+    margin: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: nth($color, $i);
+      opacity: 0.7;
+      animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
+      animation-delay: 200ms * $i;
+      transition: 0.5s all ease;
+      transform: scale(1);
+    }
+  }
+}
+//! Menu
+
+$color-one: #ffffff;
+$color-two: #ffffff;
+$color-three: #C0392D;
+$color-four: #9C69E2;
+
+.dn {
+  
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#menu {
+	background: $color-four;
+	width: 100vw;
+	height: auto;
+	padding: 50px 0;
+	color: $color-two;
+	display: flex;
+	visibility: visible;
+	opacity: 1;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	border-radius: 3px;
+	transition: all 300ms ease-in-out;
+	position: fixed;
+	top: -600vh;
+	left: 0px;
+	z-index: 9;
+	&.active {
+		top: 0;
+	}
+	#logo {
+		font-size: 25px;
+		font-weight: 700;
+	}
+	ul {
+		list-style-type: none;
+		padding: 0;
+		li {
+			margin: 10px 0;
+		}
+	}
+}
+
+#toggle {
+  position: absolute;
+  display: none;
+	width: 28px;
+	height: 36px;
+	right: 20px;
+  top: calc(50%);
+  transform: translateY(-28%);
+	transition: all 300ms ease-in-out;
+	z-index: 10;
+	input {
+		position: absolute;
+		top: -3px;
+		left: -3px;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 0;
+		cursor: pointer;
+		&:checked {
+			+ span {
+				background: transparent;
+				left: 0;
+				&:after {
+					transform: rotate(45deg) translate(-1px, -12px);
+					left: -7px;
+					background: #fff;
+				}
+				&:before {
+					transform: rotate(-45deg) translate(-4px, 16px);
+					left: -7px;
+					background: #fff;
+				}
+			}
+		}
+	}
+	span {
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		background: $color-one;
+		margin-top: 10px;
+		transition: all 0.1s;
+		left: 0;
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background: $color-one;
+			top: -12px;
+			left: 0;
+			transition: all 0.3s;
+		}
+		&:after {
+			top: 12px;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @import '../sass/block/footer';
 @import '../sass/block/header';
 @import '../sass/block/our-help';
 @import '../sass/block/work';
 @import '../sass/block/new-people';
 @import '../sass/block/find';
+@import '../sass/base/media';
