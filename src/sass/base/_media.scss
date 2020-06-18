@@ -179,6 +179,12 @@
 }
 
 @media (max-width: 768px) { //576 
+  .nav__list__item a {
+    font-size: 29px;
+  }
+  #menu {
+    height: 100%;
+  }
   .span-bottom__top::before  {
     bottom: 6px;
   }
@@ -196,6 +202,14 @@
 }
 
 @media (max-width: 576px)  { //320
+  .nav {
+    &__list-m {
+      padding-left: 20px !important;
+    }
+  }
+  .nav__list__item a {
+    font-size: 23px;
+}x
   .header {
     padding-bottom: 72px;
     &__title {
@@ -306,3 +320,4 @@
     }
   }
 }
+
