@@ -54,24 +54,13 @@
       padding: 25px 42px;
       color: #D84948;
       position: relative;
-      // &::after {
-      //   position: absolute;
-      //   right: -200%;
-      //   top: calc(50% - 1px);
-      //   content: '';
-      //   height: 1px;
-      //   width: 100px;
-      //   background-color: rgba(0, 0, 0, 0.11);
-
-      // }
       &::before {
         content: '';
         border: 1px solid rgba(221, 221, 221, 0.5);
         box-sizing: border-box;
         height: 98px;
         width: 98px;
-        border-radius: 100%;
-        padding: 25px 42px;
+        border-radius: 50%;
         position: absolute;
         top: 0;
         left: 0;
@@ -79,9 +68,6 @@
         opacity: 0;
         color: #D84948;
       }
-      // &:hover::before {
-      //   transform: scale(1.621);
-      // }
     }
     &__body {
       margin-top: 47px;
